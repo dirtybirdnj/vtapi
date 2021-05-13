@@ -80,7 +80,7 @@ function Header({
 	    <MenuContainer>
 	    	{Object.keys(menu).map((i) => {
           return(
-            <StyledLink to={menu[i].path}>{menu[i].name}</StyledLink>
+            <StyledLink key={i} to={menu[i].path}>{menu[i].name}</StyledLink>
           )
         })}
 	    </MenuContainer>

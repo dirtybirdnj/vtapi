@@ -33,7 +33,7 @@ function App() {
         <Switch>
           {Object.keys(menu).map((i) => {
             return(
-              <Route exact path={menu[i].path} component ={menu[i].component} />
+              <Route key={i} exact path={menu[i].path} component ={menu[i].component} />
             )
           })}
         </Switch>
