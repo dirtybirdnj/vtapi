@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 /* SVGS */
 import footer from '../svgs/footer.svg';
@@ -24,7 +25,7 @@ const MenuContainer = styled.div`
 	justify-content: center;
 `;
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
 	color: #000;
 	line-height: 1.5;
 	font-size: 10px;
@@ -58,11 +59,11 @@ function Footer({
 	    	<img src={footer} alt="VTAPI" />
 	    </Logo>
 	    <MenuContainer>
-	    	<Link>Home</Link>
-	    	<Link>Services</Link>
-	    	<Link>Values</Link>
-	    	<Link>About</Link>
-	    	<Link>Contact</Link>
+	    	<StyledLink to={`/`}>Home</StyledLink>
+	    	<StyledLink to={`/services`}>Services</StyledLink>
+	    	<StyledLink to={`/values`}>Values</StyledLink>
+	    	<StyledLink to={`/about`}>About</StyledLink>
+	    	<StyledLink to={`/contact`}>Contact</StyledLink>
 	    </MenuContainer>
 	    <FooterLogo>
 	    	<img src={footerPerson} alt="VTAPI" />

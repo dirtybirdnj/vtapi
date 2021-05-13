@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
+
 import logo from '../svgs/logo.svg';
 import menuDivider from '../svgs/menuDivider.svg';
 
@@ -21,7 +23,7 @@ const MenuContainer = styled.div`
 	justify-content: center;
 `;
 
-const Link = styled.a`
+const StyledLink = styled(Link)`
 	color: #000;
 	line-height: 1.5;
 	font-size: 16px;
@@ -62,16 +64,16 @@ function Header({
 
   return (
     <HeaderContainer {...props}>
-    <Logo>
-    	<img src={logo} alt="VTAPI" />
-    </Logo>
-    <MenuContainer>
-    	<Link>Home</Link>
-    	<Link>Services</Link>
-    	<Link>Values</Link>
-    	<Link>About</Link>
-    	<Link>Contact</Link>
-    </MenuContainer>
+	    <Logo>
+	    	<img src={logo} alt="VTAPI" />
+	    </Logo>
+	    <MenuContainer>
+	    	<StyledLink to={`/`}>Home</StyledLink>
+	    	<StyledLink to={`/services`}>Services</StyledLink>
+	    	<StyledLink to={`/values`}>Values</StyledLink>
+	    	<StyledLink to={`/about`}>About</StyledLink>
+	    	<StyledLink to={`/contact`}>Contact</StyledLink>
+	    </MenuContainer>
     </HeaderContainer>
   );
 }
