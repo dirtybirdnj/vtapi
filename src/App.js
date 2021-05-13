@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'react-style-reset/string';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -23,6 +24,7 @@ function App() {
       <GlobalStyles />
       <Header />
       HAY AN APP
+      <Footer />
     </AppContainer>
   );
 }

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import logo from '../logo.svg';
-import menuDivider from '../menuDivider.svg';
+import logo from '../svgs/logo.svg';
+import menuDivider from '../svgs/menuDivider.svg';
 
 const HeaderContainer = styled.div`
-
+	padding-bottom: 25px;
 `;
 
 const Logo = styled.div`
