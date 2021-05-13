@@ -4,6 +4,7 @@ import Contact from './views/Contact';
 import Services from './views/Services';
 import Values from './views/Values';
 
+// You can change the order of links here
 export const menu = {
 	home: {
 		path: '/',
