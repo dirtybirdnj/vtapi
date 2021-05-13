@@ -1,6 +1,10 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
+// Data
+import {menu} from '../data';
+
+// SVGs
 import logo from '../svgs/logo.svg';
 import menuDivider from '../svgs/menuDivider.svg';
 
@@ -15,6 +19,10 @@ const Logo = styled.div`
 		margin: 0px auto;
 		width: 300px;
 		height: 200px;
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 `;
 
@@ -31,6 +39,7 @@ const StyledLink = styled(Link)`
 	margin: 10px;
 	padding-right: 26px;
 	position: relative;
+	text-decoration: none;
 
 	&:hover {
 		cursor: pointer;
@@ -61,18 +70,19 @@ const StyledLink = styled(Link)`
 function Header({
   ...props
 }) {
+	let history = useHistory();
 
   return (
     <HeaderContainer {...props}>
 	    <Logo>
-	    	<img src={logo} alt="VTAPI" />
+	    	<img onClick={() => history.push(`/`)} src={logo} alt="VTAPI" />
 	    </Logo>
 	    <MenuContainer>
-	    	<StyledLink to={`/`}>Home</StyledLink>
-	    	<StyledLink to={`/services`}>Services</StyledLink>
-	    	<StyledLink to={`/values`}>Values</StyledLink>
-	    	<StyledLink to={`/about`}>About</StyledLink>
-	    	<StyledLink to={`/contact`}>Contact</StyledLink>
+	    	{Object.keys(menu).map((i) => {
+          return(
+            <StyledLink to={menu[i].path}>{menu[i].name}</StyledLink>
+          )
+        })}
 	    </MenuContainer>
     </HeaderContainer>
   );

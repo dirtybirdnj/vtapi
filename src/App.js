@@ -2,15 +2,15 @@ import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'react-style-reset/string';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// Data
+import {menu} from './data';
+
+// Components
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-//TODO: Move menu info to json
-import About from './views/About';
-import Home from './views/Home';
-import Contact from './views/Contact';
-import Services from './views/Services';
-import Values from './views/Values';
+// Views, must match name in data.js
+
 
 const GlobalStyles = createGlobalStyle`
   ${reset};
@@ -34,11 +34,11 @@ function App() {
       <Router>
        <Header />
         <Switch>
-          <Route exact path="/" component ={Home} />
-          <Route exact path="/about" component ={About} />
-          <Route exact path="/contact" component ={Contact} />
-          <Route exact path="/services" component ={Services} />
-          <Route exact path="/values" component ={Values} />
+          {Object.keys(menu).map((i) => {
+            return(
+              <Route exact path={menu[i].path} component ={menu[i].component} />
+            )
+          })}
         </Switch>
         <Footer />
       </Router>

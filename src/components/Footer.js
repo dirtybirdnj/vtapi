@@ -1,13 +1,18 @@
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
-/* SVGS */
+// Data
+import {menu} from '../data';
+
+// SVGs
 import footer from '../svgs/footer.svg';
 import footerPerson from '../svgs/footerPerson.svg';
 import footerSettings from '../svgs/footerSettings.svg';
 
 const FooterContainer = styled.div`
 	padding-top:25px;
+	display: flex;
+	flex-direction: column;
 `;
 
 const Logo = styled.div`
@@ -32,6 +37,7 @@ const StyledLink = styled(Link)`
 	font-weight: 500;
 	margin: 10px;
 	position: relative;
+	text-decoration: none;
 
 	&:hover {
 		cursor: pointer;
@@ -40,6 +46,7 @@ const StyledLink = styled(Link)`
 
 const FooterLogo = styled.div`
 	display: flex;
+	margin: 0px auto;
 	justify-content: center;
 	align-items: center;
 
@@ -47,11 +54,16 @@ const FooterLogo = styled.div`
 		font-size: 20px;
 		padding: 5px;
 	}
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
 
 function Footer({
   ...props
 }) {
+	let history = useHistory();
 
   return (
     <FooterContainer {...props}>
@@ -59,13 +71,13 @@ function Footer({
 	    	<img src={footer} alt="VTAPI" />
 	    </Logo>
 	    <MenuContainer>
-	    	<StyledLink to={`/`}>Home</StyledLink>
-	    	<StyledLink to={`/services`}>Services</StyledLink>
-	    	<StyledLink to={`/values`}>Values</StyledLink>
-	    	<StyledLink to={`/about`}>About</StyledLink>
-	    	<StyledLink to={`/contact`}>Contact</StyledLink>
+	    	{Object.keys(menu).map((i) => {
+          return(
+            <StyledLink to={menu[i].path}>{menu[i].name}</StyledLink>
+          )
+        })}
 	    </MenuContainer>
-	    <FooterLogo>
+	    <FooterLogo onClick={() => history.push(`/`)}>
 	    	<img src={footerPerson} alt="VTAPI" />
 	    	<div>vtapi.co</div>
 	    	<img src={footerSettings} alt="VTAPI" />
