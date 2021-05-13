@@ -9,9 +9,6 @@ import {menu} from './data';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-// Views, must match name in data.js
-
-
 const GlobalStyles = createGlobalStyle`
   ${reset};
   
