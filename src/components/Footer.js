@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link, useHistory } from "react-router-dom";
+import { isMobileOnly } from 'react-device-detect';
 
 // Data
 import {menu} from '../data';
@@ -20,8 +21,8 @@ const Logo = styled.div`
 
 	img {
 		margin: 0px auto;
-		width: 360px;
-		height: 55px;
+		width: ${isMobileOnly ? '90vw' : '360px'};
+		height: ${isMobileOnly ? '15.2vw' : '55px'};
 	}
 `;
 

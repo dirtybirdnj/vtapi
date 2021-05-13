@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link, useHistory } from "react-router-dom";
+import { isMobileOnly } from 'react-device-detect';
 
 // Data
 import {menu} from '../data';
@@ -28,7 +29,7 @@ const Logo = styled.div`
 
 const MenuContainer = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: ${isMobileOnly ? 'space-between' : 'center'};
 `;
 
 const StyledLink = styled(Link)`
@@ -36,8 +37,8 @@ const StyledLink = styled(Link)`
 	line-height: 1.5;
 	font-size: 16px;
 	font-weight: 500;
-	margin: 10px;
-	padding-right: 26px;
+	margin: ${isMobileOnly ? '0' : '10px'};
+	padding-right: ${isMobileOnly ? '0' : '26px'};
 	position: relative;
 	text-decoration: none;
 
@@ -52,10 +53,14 @@ const StyledLink = styled(Link)`
 		transform: translate3d(0, -50%, 0);
 		right: 0px;
 		width: 100%;
-		height: 16px;
+		height: ${isMobileOnly ? '12px' : '16px'};
 		background-image: url(${menuDivider});
 		background-repeat: no-repeat;
 		background-position: center right;
+
+		${isMobileOnly && `
+			display: none;
+		`}
 	}
 
 	&:last-of-type {

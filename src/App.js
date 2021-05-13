@@ -21,6 +21,7 @@ const AppContainer = styled.div`
   width: 90vw;
   margin: 0px auto;
   max-width: 1440px;
+  overflow: hidden;
 `;
 
 function App() {
