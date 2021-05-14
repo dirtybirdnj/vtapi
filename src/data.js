@@ -11,16 +11,6 @@ export const menu = {
 		name: 'Home',
 		component: Home
 	},
-	about: {
-		path: '/about',
-		name: 'About',
-		component: About
-	},
-	contact: {
-		path: '/contact',
-		name: 'Contact',
-		component: Contact
-	},
 	services: {
 		path: '/services',
 		name: 'Services',
@@ -30,5 +20,15 @@ export const menu = {
 		path: '/values',
 		name: 'Values',
 		component: Values
+	},
+	about: {
+		path: '/about',
+		name: 'About',
+		component: About
+	},
+	contact: {
+		path: '/contact',
+		name: 'Contact',
+		component: Contact
 	}
 }

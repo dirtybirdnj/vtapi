@@ -11,6 +11,7 @@ import menuDivider from '../svgs/menuDivider.svg';
 
 const HeaderContainer = styled.div`
 	padding-bottom: 25px;
+	margin-top: 40px;
 `;
 
 const Logo = styled.div`
@@ -94,5 +95,3 @@ function Header({
 }
 
 export default Header;
-
-

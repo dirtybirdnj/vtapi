@@ -79,14 +79,12 @@ function Footer({
         })}
 	    </MenuContainer>
 	    <FooterLogo onClick={() => history.push(`/`)}>
-	    	<img src={footerPerson} alt="VTAPI" />
+	    	<img src={footerPerson} alt="Get Out and Enjoy The Outdoors" />
 	    	<div>vtapi.co</div>
-	    	<img src={footerSettings} alt="VTAPI" />
+	    	<img src={footerSettings} alt="Technology sufficiently advanced to an audience is indistinguishable from magic." />
 	    </FooterLogo>
     </FooterContainer>
   );
 }
 
 export default Footer;
-
-
