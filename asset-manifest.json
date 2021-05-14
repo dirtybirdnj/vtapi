@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/vtapi/static/js/main.3c990627.chunk.js",
+    "main.js.map": "/vtapi/static/js/main.3c990627.chunk.js.map",
+    "runtime-main.js": "/vtapi/static/js/runtime-main.e9e8ee14.js",
+    "runtime-main.js.map": "/vtapi/static/js/runtime-main.e9e8ee14.js.map",
+    "static/js/2.dab0d3ec.chunk.js": "/vtapi/static/js/2.dab0d3ec.chunk.js",
+    "static/js/2.dab0d3ec.chunk.js.map": "/vtapi/static/js/2.dab0d3ec.chunk.js.map",
+    "static/js/3.36294d90.chunk.js": "/vtapi/static/js/3.36294d90.chunk.js",
+    "static/js/3.36294d90.chunk.js.map": "/vtapi/static/js/3.36294d90.chunk.js.map",
+    "index.html": "/vtapi/index.html",
+    "static/js/2.dab0d3ec.chunk.js.LICENSE.txt": "/vtapi/static/js/2.dab0d3ec.chunk.js.LICENSE.txt",
+    "static/media/footer.b63b1312.svg": "/vtapi/static/media/footer.b63b1312.svg",
+    "static/media/footerPerson.fa5062e2.svg": "/vtapi/static/media/footerPerson.fa5062e2.svg",
+    "static/media/footerSettings.ad97175c.svg": "/vtapi/static/media/footerSettings.ad97175c.svg",
+    "static/media/logo.b0dece73.svg": "/vtapi/static/media/logo.b0dece73.svg",
+    "static/media/menuDivider.b7abf7ce.svg": "/vtapi/static/media/menuDivider.b7abf7ce.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e9e8ee14.js",
+    "static/js/2.dab0d3ec.chunk.js",
+    "static/js/main.3c990627.chunk.js"
+  ]
+}
