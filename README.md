@@ -2,7 +2,25 @@
 
 This project is a front-end marketing site for vtapi.co
 
-Objectives:
+### Build Instructions
+
+ * `git clone git@github.com:nicolabella/vtapi.git`
+ * `npm install`
+ * `npm run develop`
+
+### Site Tree:
+
+Homepage
+  - Links to "What's an API" via 3 scrolls graphic
+  - About
+    - Picture of Mat
+    - Who, What, When, Where, Why
+  - Services
+  - Values
+  - Contact
+    - Pipe form to google forms (https://www.developerdrive.com/add-google-forms-static-site/)
+
+### Objectives:
  - Provide a brief overview of what an API is
  - Advertise services:
    - R & D
@@ -21,32 +39,24 @@ Objectives:
    - Respect and aknowledge what you don't know
    - Help others learn and achieve over doing it for them
 
-Site Tree:
+### [Colophon](https://en.wikipedia.org/wiki/Colophon_(publishing)):
 
-Homepage
-  - Links to "What's an API" via 3 scrolls graphic
-  - About
-    - Picture of Mat
-    - Who, What, When, Where, Why
-  - Services
-  - Values
-  - Contact
-    - Pipe form to google forms (https://www.developerdrive.com/add-google-forms-static-site/)
+Front End:
+[Create React App](https://github.com/facebook/create-react-app)
 
-
-Colophon:
-
-Front End: [Create React App](https://github.com/facebook/create-react-app)
-
-Visual Assets / Typeface: [Vintage Font Bundle](https://www.heritagetype.com/products/vintage-font-bundle?_pos=2&_sid=f8860d6bb&_ss=r)
+Visual Assets / Typeface:
+[Vintage Font Bundle](https://www.heritagetype.com/products/vintage-font-bundle?_pos=2&_sid=f8860d6bb&_ss=r)
 
 Fonts:
 Alata [Google Fonts](https://fonts.google.com/specimen/Alata)
 
-Thanks:
+Icons:
+[Google Icons](https://fonts.google.com/icons)
 
-Nicole Colabella, Matt Mulligan
+# Special Thanks:
+
+Nicole Colabella, Matt Mulligan, Andrew Rousseau
 
 Last but not least thank you for all the love and support,
 
-# My Incredible Wife Monica Gilbert
+### My Incredible Wife 💍 ❤️ Monica Gilbert ❤️
