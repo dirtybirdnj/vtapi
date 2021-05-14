@@ -8,6 +8,9 @@ This project is a front-end marketing site for vtapi.co
  * `npm install`
  * `npm run develop`
 
+### Deploying / Publishing
+ * `npm run deploy`
+
 ### Site Tree:
 
 Homepage
