@@ -3,6 +3,7 @@ import Home from './views/Home';
 import Contact from './views/Contact';
 import Services from './views/Services';
 import Values from './views/Values';
+import ApiExplain from './views/ApiExplain';
 
 // You can change the order of links here
 export const menu = {
@@ -20,6 +21,11 @@ export const menu = {
 		path: '/values',
 		name: 'Values',
 		component: Values
+	},
+	whatsanapi: {
+		path: '/whats-an-api',
+		name: 'Whats an API?',
+		component: ApiExplain
 	},
 	about: {
 		path: '/about',
