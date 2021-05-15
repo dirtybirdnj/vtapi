@@ -52,15 +52,25 @@ Homepage
 ### [Colophon](https://en.wikipedia.org/wiki/Colophon_(publishing)):
 
 Front End:
+
 [Create React App](https://github.com/facebook/create-react-app)
 
+Forms
+
+[Custom Frontend for Google Form](https://dev.to/utkarshdhiman48/custom-frontend-for-google-form-456l)
+
+[Formik](https://formik.org/docs/overview)
+
 Visual Assets / Typeface:
+
 [Vintage Font Bundle](https://www.heritagetype.com/products/vintage-font-bundle?_pos=2&_sid=f8860d6bb&_ss=r)
 
 Fonts:
+
 Alata [Google Fonts](https://fonts.google.com/specimen/Alata)
 
 Icons:
+
 [Google Icons](https://fonts.google.com/icons)
 
 # Special Thanks:
