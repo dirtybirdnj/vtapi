@@ -3,10 +3,11 @@
 This project is a front-end marketing site for vtapi.co
 
 ### TODO:
-[ ] Make homepage content appear on first pageload (shows footer & header w/no content)
-[ ] Add meta-content for [link-preview](https://andrejgajdos.com/how-to-create-a-link-preview/)
-[ ] Add some kind of favicon other than react logo
-[ ] Hook form up to google forms
+- [ ] Add "whats an api page"
+- [ ] Make homepage content appear on first pageload (shows footer & header w/no content)
+- [ ] Add meta-content for [link-preview](https://andrejgajdos.com/how-to-create-a-link-preview/)
+- [ ] Add some kind of favicon other than react logo
+- [ ] Hook form up to google forms
 
 ### Build Instructions
 
@@ -31,7 +32,7 @@ Homepage
 
 ### Objectives:
  - Provide a brief overview of what an API is
- - Advertise services:
+ - Advertise Services:
    - R & D
    - Roadmapping
    - App Development
