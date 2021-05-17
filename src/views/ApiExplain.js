@@ -4,6 +4,24 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   text-align: center;
+
+  h1 {
+    font-size: 5em;
+    margin-bottom: .3em;
+    font-weight: 800;
+  }
+  
+  h2 {
+    font-size: 3em;
+    margin: 1em 6em;
+  }
+  
+  h3 {
+    font-size: 2em;
+    margin: 1   em 0px;
+    font-style: italic;
+    font-weight: 100;  
+  }  
 `;
 
 function ApiExplain({

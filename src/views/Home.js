@@ -9,8 +9,8 @@ text-align: center;
 
 h1 {
   font-size: 5em;
-  font-style: italic;
   margin-bottom: .3em;
+  font-weight: 800;
 }
 
 h2 {
@@ -20,6 +20,8 @@ h2 {
 h3 {
   font-size: 2em;
   margin: 1   em 0px;
+  font-style: italic;
+  font-weight: 100;  
 }
 `;
 
@@ -46,8 +48,10 @@ function Home({
 
       {/* Not sure if this should be "What is" or "What's" an API*/}
       <h2>What's an API?</h2>
+      <Spacer>
       <Link to="/whats-an-api"><p>Click here to learn more.</p></Link>
-
+      </Spacer>
+      
       <Spacer>
        <img src={divider} alt="visual divider" />
      </Spacer>

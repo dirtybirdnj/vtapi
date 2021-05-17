@@ -2,6 +2,33 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 
+justify-content: center;
+text-align: center;
+
+h1 {
+  font-size: 5em;
+  margin-bottom: .3em;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+  margin-bottom: .75em;
+}
+
+p {
+  margin-bottom: 1em;
+  margin-left: 5em;
+  margin-right: 5em;
+  line-height: 2em;
+}
+
+
+
 `;
 
 function Services({

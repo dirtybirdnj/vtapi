@@ -11,6 +11,7 @@ import footerPerson from '../svgs/footerPerson.svg';
 import footerSettings from '../svgs/footerSettings.svg';
 
 const FooterContainer = styled.div`
+	margin-bottom: 3em;
 	padding-top:25px;
 	display: flex;
 	flex-direction: column;

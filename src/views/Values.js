@@ -1,7 +1,35 @@
+import divider from '../svgs/divider.svg';
 import styled from 'styled-components';
 
 const Container = styled.div`
 
+  text-align: center;
+  justify-content: center;
+
+
+  h1 {
+    font-size: 5em;
+    margin-bottom: .25em;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+
+  li{ 
+    font-size: 1em;
+    margin: 2em 0px;
+  }
+
+`;
+
+const Spacer = styled.div`
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin: 1em 0px;
 `;
 
 function Values({
@@ -11,9 +39,20 @@ function Values({
   return (
     <Container {...props}>
 	    <h1>Values</h1>
-      <h3>These are the guiding principals and overall strategies used to provide the best outcomes for customers and their projects.</h3>
+
+      <Spacer>
+       <img src={divider} alt="visual divider" />
+     </Spacer>
+      
+
+      <h3>These are the guiding strategies and principals<br/> used to provide the best outcomes for customers and their projects.</h3>
+      
+      <Spacer>
+       <img src={divider} alt="visual divider" />
+     </Spacer>
+      
       <ul>
-        <li>100% Honesty and Transparency</li>
+        <li>100% honesty and transparency</li>
         <li>Use the best tools available</li>
         <li>Avoid vendor lock in and use cross platform tools</li>
         <li>Question everything, be willing to deeply understand the problem</li>
