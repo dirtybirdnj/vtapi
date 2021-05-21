@@ -40,7 +40,7 @@ const validationSchema = yup.object({
 
 const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField) => {
 
-  axios({
+  Axios({
     "method": "POST",
     "url": "https://docs.google.com/forms/u/0/d/e/1FAIpQLScvkfFexfBDw-omKtuuCGDSE38AlYX7bCGHs2veLtgY8ymu5Q/formResponse",
     "headers": {
