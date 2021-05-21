@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'react-style-reset/string';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 // Data
 import {menu} from './data';
@@ -29,7 +29,7 @@ function App() {
     <AppContainer>
       <GlobalStyles />
       
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
        <Header />
         <Switch>
           {Object.keys(menu).map((i) => {
