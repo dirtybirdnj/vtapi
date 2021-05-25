@@ -65,6 +65,9 @@ Visual Assets / Typeface:
 
 [Vintage Font Bundle](https://www.heritagetype.com/products/vintage-font-bundle?_pos=2&_sid=f8860d6bb&_ss=r)
 
+Vermont Map:
+[Wikimedia Commons](https://commons.wikimedia.org/wiki/File:USA_Vermont_location_map.svg)
+
 Fonts:
 
 Alata [Google Fonts](https://fonts.google.com/specimen/Alata)
