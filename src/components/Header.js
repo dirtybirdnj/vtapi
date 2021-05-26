@@ -7,7 +7,6 @@ import {menu} from '../data';
 
 // SVGs
 import logo from '../svgs/logo.svg';
-import vermont from '../svgs/vt-withisles-simple.svg';
 import menuDivider from '../svgs/menuDivider.svg';
 
 const HeaderContainer = styled.div`
