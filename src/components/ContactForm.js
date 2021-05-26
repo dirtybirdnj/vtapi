@@ -48,7 +48,9 @@ const validationSchema = yup.object({
 });
 
 
-const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField) => {
+const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, reciept) => {
+
+  const dataString = "entry.524352911=" + encodeURI(name) + "&entry.183003631" + encodeURI(freeTypeField) + "&entry.1855206624=" + encodeURI(contactMethod) + "&entry.1255994120=" + encodeURI(helpType) + "&emailAddress=" + encodeURI(email) + "&emailReciept=" + encodeURI(reciept)
 
   Axios({
     "method": "POST",
@@ -57,7 +59,12 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField) =
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
       "Cookie": "S=spreadsheet_forms=hmjPgsJML3911IbuPqGHhLDejYaBEnjTUBtU5N7g9Aw; NID=216=WtmOO5ltpe4hbI1dAP9_hii3YXAHfMUvvtylSeu-6GlQiISfQ8koNgCK-440pF9OUpvKDWkoS2d7HUEG_aM8sxc3hj2DKFsWyP7cCFLh9pRjstk--NTdxQg7TZHH58ibw-AH7yr9i5W49QrtvhAQY88rdVCE1bum6MmkuM2NnCc"
     },
-    "data": "entry.524352911=Tam+Treblig&entry.183003631=I+found+a+big+hole+in+the+woods.+Scary+shit+came+out%2C+help+come+save+the+village.&entry.1855206624=Video+%2F+Screenshare&entry.1255994120=I+need+my+existing+system+to+talk+to+a+new+API+or+third+party+service&emailAddress=matgilbert%2Bvtapi4%40gmail.com&emailReciept=true"
+    "data": dataString
+  }).then((e) => {
+
+    console.log(e, 'form submitted');
+
+
   });
 
 }
@@ -71,6 +78,9 @@ const WithMaterialUI = () => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+
+      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.sendreciept);
+
     },
   });
 

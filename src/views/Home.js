@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import apiScrollsBanner from '../svgs/api-fancy-banners-2.svg';
+import apiScrollsBanner from '../svgs/scrolls-api-paths.svg';
 import divider from '../svgs/divider.svg';
 
 const Container = styled.div`
@@ -57,7 +57,7 @@ function Home({
     <Spacer>
      <h4>Providing Vermont with creative solutions to technical challenges since 2019</h4>
      </Spacer>
-     
+
       <Spacer>
       <img src={apiScrollsBanner} alt="Applications, Programming, Interfaces" />
       </Spacer>
