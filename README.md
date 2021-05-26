@@ -2,12 +2,25 @@
 
 This project is a front-end marketing site for vtapi.co
 
+https://vtapi.netlify.app/
+
 ### TODO:
 - [x] Add "whats an api page"
 - [x] Make homepage content appear on first pageload (shows footer & header w/no content)
 - [ ] Add meta-content for [link-preview](https://andrejgajdos.com/how-to-create-a-link-preview/)
 - [ ] Add some kind of favicon other than react logo
 - [ ] Hook form up to google forms
+- [X] Deploy to netlify (trying to fix cors)
+- [ ] Site shows white screen but # router in URL on mobile / android :( https://vtapi.netlify.app/
+
+### TODO STYLING
+- [X] Services - About 90% done, maybe some spacers?
+- [X] Home - About 90% done, needs some space and fine tuning
+- [X] Values - Done
+- [ ] Whats an API - Needs alignment / structure to existing content. Logos / links for examples
+- [ ] About - Make two colums that take up equally 50% of width. Make picture / data both hug the inside of these two colums so the content is centered
+- [ ] Contact - Radio groups are misaligned. Form has CORS issues despite deploys to netlify
+- [ ] Header - Star spacers squish into nav items when resizing small... is this a
 
 ### Build Instructions
 
