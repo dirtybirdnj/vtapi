@@ -37,7 +37,7 @@ const StyledLink = styled(Link)`
 	color: #000;
 	line-height: 1.5;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 500;npm
 	margin: ${isMobileOnly ? '0' : '10px'};
 	padding-right: ${isMobileOnly ? '0' : '26px'};
 	position: relative;
