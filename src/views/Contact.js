@@ -12,7 +12,6 @@ function Contact({
 
   return (
     <Container {...props}>
-      <h2>Contact Form</h2>
       <ContactForm/>
     </Container>
   );

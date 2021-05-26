@@ -10,18 +10,22 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Axios from 'axios';
-
-
-
-
 import styled from 'styled-components';
 
+import divider from '../svgs/divider.svg';
+
 const Container = styled.div`
-width: 50%;
-margin-left: .5em;
-margin-right: .5em;
+width: 100%;
+height: 100%;
 justify-content: center;
 text-align: center;
+display: flex;
+
+h1 {
+  font-size: 5em;
+  margin-bottom: .3em;
+  font-weight: 800;
+}
 `;
 
 const Spacer = styled.div`
@@ -29,6 +33,10 @@ const Spacer = styled.div`
   text-align: center;
   justify-content: center;
   margin: 1em 0px;
+`;
+
+const Float = styled.div`
+  width: 60%;
 `;
 
 
@@ -68,19 +76,13 @@ const WithMaterialUI = () => {
 
   return (
     <Container>
+      <Float>
+        <h1>Contact</h1>
+      <Spacer>
+       <img src={divider} alt="visual divider" />
+     </Spacer>
       <form onSubmit={formik.handleSubmit}>
-        <Spacer>
-        <TextField
-          fullWidth
-          id="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-        </Spacer>
+
 
         <Spacer>
         <TextField
@@ -93,6 +95,19 @@ const WithMaterialUI = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
+        />
+        </Spacer>
+
+        <Spacer>
+        <TextField
+          fullWidth
+          id="email"
+          name="email"
+          label="Email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helperText={formik.touched.email && formik.errors.email}
         />
         </Spacer>
 
@@ -121,6 +136,25 @@ const WithMaterialUI = () => {
         </Spacer>
 
         <Spacer>
+
+        <FormControl component="fieldset">
+        <FormLabel component="legend">Please provide some details about your request</FormLabel>
+        <TextField
+          fullWidth
+          id="details"
+          name="details"
+          multiline
+          rows={4}
+          defaultValue="Enter some details about your project or request"
+          value={formik.values.details}
+          onChange={formik.handleChange}
+          error={formik.touched.details && Boolean(formik.errors.details)}
+          helperText={formik.touched.details && formik.errors.details}
+        />
+        </FormControl>
+        </Spacer>
+
+        <Spacer>
         <FormControlLabel
           control={<Checkbox checked={formik.values.sendreciept} onChange={formik.handleChange} name="sendreciept" />}
           label="Send yourself a reciept of this form?"
@@ -131,6 +165,10 @@ const WithMaterialUI = () => {
           Submit
         </Button>
       </form>
+      <Spacer>
+       <img src={divider} alt="visual divider" />
+     </Spacer>
+      </Float>
     </Container>
   );
 };

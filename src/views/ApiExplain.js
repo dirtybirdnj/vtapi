@@ -44,10 +44,12 @@ const Container = styled.div`
 
   ul {
     width: auto;
-    margin: 0px 7em;
+    margin: 0px 12em;
   }
 
   li {
+    font-size: 1em;
+    line-height: 1.5em;
     text-align: left;
     padding: 1em;
     list-style-type: disc;
@@ -75,6 +77,14 @@ const Spacer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
+
+`;
+
+const EndMessage = styled.div`
+  font-size: 1.25em;
+  line-height: 2em;
+  margin: 3em 5em;
+  font-weight: 100;
 
 `;
 
@@ -169,7 +179,7 @@ function ApiExplain({
       need help with?</h2>
     <Spacer>
 
-    <h4>Whether you are building software from scratch or extending an existing platform, you're going to have to deal with APIs at some point. Our  experience building new systems and integrating with services can help anticipate problems and improve outcomes.</h4>
+    <EndMessage>Whether you're building software from scratch or extending an existing platform, you're going to have to deal with APIs at some point. Our experience building new systems and integrating with services can help anticipate problems and improve outcomes.</EndMessage>
     </Spacer>
 
 

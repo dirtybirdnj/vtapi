@@ -21,7 +21,7 @@ h3 {
   font-size: 2em;
   margin: 1   em 0px;
   font-style: italic;
-  font-weight: 100;  
+  font-weight: 100;
 }
 `;
 
@@ -38,9 +38,7 @@ function Home({
 
   return (
     <Container {...props}>
-      <h1>We don't do "websites"</h1>
-      <h3>We provide advice, information and solutions</h3>
-
+      <h1>Don't call it a website</h1>
 
      <Spacer>
        <img src={divider} alt="visual divider" />
@@ -51,16 +49,20 @@ function Home({
       <Spacer>
       <Link to="/whats-an-api"><p>Click here to learn more.</p></Link>
       </Spacer>
-      
+
       <Spacer>
        <img src={divider} alt="visual divider" />
      </Spacer>
 
+    <Spacer>
+     <h4>Providing Vermont with creative solutions to technical challenges since 2019</h4>
+     </Spacer>
+     
       <Spacer>
       <img src={apiScrollsBanner} alt="Applications, Programming, Interfaces" />
       </Spacer>
 
-      <h4>Providing Vermont with creative solutions to technical challenges since 2019</h4>
+
     </Container>
   );
 }

@@ -17,15 +17,15 @@ export const menu = {
 		name: 'Services',
 		component: Services
 	},
-	values: {
-		path: '/values',
-		name: 'Values',
-		component: Values
-	},
 	whatsanapi: {
 		path: '/whats-an-api',
 		name: 'Whats an API?',
 		component: ApiExplain
+	},
+	values: {
+		path: '/values',
+		name: 'Values',
+		component: Values
 	},
 	about: {
 		path: '/about',
