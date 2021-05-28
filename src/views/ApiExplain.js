@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import { isMobileOnly } from 'react-device-detect';
 
 import apiFastFood from "../svgs/api-fastfood.svg";
 import topCap from '../svgs/topcap.svg';
@@ -53,7 +54,7 @@ const Spacer = styled.div`
 
 const FlexContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${isMobileOnly ? 'column' : 'row'};
   justify-content: space-between;
   margin-bottom: 20px;
 
@@ -67,10 +68,15 @@ const FlexContainer = styled.div`
 
   p {
     margin-bottom: 5px;
+
+    &:last-of-type {
+      margin-top: 10px;
+    }
   }
 
   ul {
     margin: 0px;
+    margin: ${isMobileOnly ? '0 0 20px' : '0px'};
   }
 `;
 
@@ -78,6 +84,7 @@ const FlexColumnContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: ${isMobileOnly ? 'column' : 'row'};
 
   div {
     text-align: left;
@@ -103,7 +110,7 @@ const FlexColumnContainer = styled.div`
 const EndMessage = styled.div`
   font-size: 1.25em;
   line-height: 2em;
-  margin: 0 5em 30px;
+  margin: ${isMobileOnly ? '0 0 30px' : '0 5em 30px'};
   font-weight: 100;
 `;
 
