@@ -1,29 +1,28 @@
 {
   "files": {
-    "main.js": "/vtapi/static/js/main.1c9c4659.chunk.js",
-    "main.js.map": "/vtapi/static/js/main.1c9c4659.chunk.js.map",
-    "runtime-main.js": "/vtapi/static/js/runtime-main.0bbcd9c0.js",
-    "runtime-main.js.map": "/vtapi/static/js/runtime-main.0bbcd9c0.js.map",
-    "static/js/2.370e7896.chunk.js": "/vtapi/static/js/2.370e7896.chunk.js",
-    "static/js/2.370e7896.chunk.js.map": "/vtapi/static/js/2.370e7896.chunk.js.map",
-    "static/js/3.75dd0562.chunk.js": "/vtapi/static/js/3.75dd0562.chunk.js",
-    "static/js/3.75dd0562.chunk.js.map": "/vtapi/static/js/3.75dd0562.chunk.js.map",
-    "index.html": "/vtapi/index.html",
-    "static/js/2.370e7896.chunk.js.LICENSE.txt": "/vtapi/static/js/2.370e7896.chunk.js.LICENSE.txt",
-    "static/media/api-fastfood.3747e7f5.svg": "/vtapi/static/media/api-fastfood.3747e7f5.svg",
-    "static/media/divider.b62a6075.svg": "/vtapi/static/media/divider.b62a6075.svg",
-    "static/media/footer.b63b1312.svg": "/vtapi/static/media/footer.b63b1312.svg",
-    "static/media/footerPerson.fa5062e2.svg": "/vtapi/static/media/footerPerson.fa5062e2.svg",
-    "static/media/footerSettings.ad97175c.svg": "/vtapi/static/media/footerSettings.ad97175c.svg",
-    "static/media/logo.b0dece73.svg": "/vtapi/static/media/logo.b0dece73.svg",
-    "static/media/mat-at-vtcc.d8894ca1.jpeg": "/vtapi/static/media/mat-at-vtcc.d8894ca1.jpeg",
-    "static/media/menuDivider.b7abf7ce.svg": "/vtapi/static/media/menuDivider.b7abf7ce.svg",
-    "static/media/scrolls-api-paths.d98a5c99.svg": "/vtapi/static/media/scrolls-api-paths.d98a5c99.svg",
-    "static/media/vt-withisles-simple.b117f44f.svg": "/vtapi/static/media/vt-withisles-simple.b117f44f.svg"
+    "main.js": "/static/js/main.f77bfbd7.chunk.js",
+    "main.js.map": "/static/js/main.f77bfbd7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c9949feb.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c9949feb.js.map",
+    "static/js/2.dd385a4b.chunk.js": "/static/js/2.dd385a4b.chunk.js",
+    "static/js/2.dd385a4b.chunk.js.map": "/static/js/2.dd385a4b.chunk.js.map",
+    "static/js/3.75dd0562.chunk.js": "/static/js/3.75dd0562.chunk.js",
+    "static/js/3.75dd0562.chunk.js.map": "/static/js/3.75dd0562.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.dd385a4b.chunk.js.LICENSE.txt": "/static/js/2.dd385a4b.chunk.js.LICENSE.txt",
+    "static/media/api-fastfood.3747e7f5.svg": "/static/media/api-fastfood.3747e7f5.svg",
+    "static/media/divider.b62a6075.svg": "/static/media/divider.b62a6075.svg",
+    "static/media/footer.b63b1312.svg": "/static/media/footer.b63b1312.svg",
+    "static/media/footerPerson.fa5062e2.svg": "/static/media/footerPerson.fa5062e2.svg",
+    "static/media/footerSettings.ad97175c.svg": "/static/media/footerSettings.ad97175c.svg",
+    "static/media/logo.b0dece73.svg": "/static/media/logo.b0dece73.svg",
+    "static/media/mat-at-vtcc.d8894ca1.jpeg": "/static/media/mat-at-vtcc.d8894ca1.jpeg",
+    "static/media/menuDivider.b7abf7ce.svg": "/static/media/menuDivider.b7abf7ce.svg",
+    "static/media/scrolls-api-paths.d98a5c99.svg": "/static/media/scrolls-api-paths.d98a5c99.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bbcd9c0.js",
-    "static/js/2.370e7896.chunk.js",
-    "static/js/main.1c9c4659.chunk.js"
+    "static/js/runtime-main.c9949feb.js",
+    "static/js/2.dd385a4b.chunk.js",
+    "static/js/main.f77bfbd7.chunk.js"
   ]
 }
