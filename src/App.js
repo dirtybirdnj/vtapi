@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${isMobileOnly ? '2.5em' : '5em'};
+    font-size: ${isMobileOnly ? '2.5em' : '4em'};
     margin-bottom: .5em;
     font-weight: 800;
 
@@ -85,7 +85,7 @@ const GlobalStyles = createGlobalStyle`
 const AppContainer = styled.div`
   width: 90vw;
   margin: 0px auto;
-  max-width: 1440px;
+  max-width: 800px;
   overflow: hidden;
 `;
 

@@ -8,8 +8,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: ${isMobileOnly ? 'column' : 'row'};
   justify-content: space-between;
-  max-width: 800px;
-  margin: 0px auto;
 `;
 
 const ImageContainer = styled.div`

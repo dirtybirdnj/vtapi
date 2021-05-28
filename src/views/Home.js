@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import { isMobileOnly } from 'react-device-detect';
+
 import apiScrollsBanner from '../svgs/scrolls-api-paths.svg';
 import divider from '../svgs/divider.svg';
 
 const Container = styled.div`
-justify-content: center;
-text-align: center;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    font-size: ${isMobileOnly ? '2.5em' : '5em'};
+  }
 
  p {
   text-align: center;
