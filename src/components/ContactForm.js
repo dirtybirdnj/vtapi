@@ -11,6 +11,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Axios from 'axios';
 import styled from 'styled-components';
+import { isMobileOnly } from 'react-device-detect';
 
 import divider from '../svgs/divider.svg';
 
@@ -60,7 +61,7 @@ const Spacer = styled.div`
 `;
 
 const Float = styled.div`
-  width: 70%;
+  width: ${isMobileOnly ? '90%' : '70%'};
 `;
 
 
@@ -114,10 +115,6 @@ const WithMaterialUI = () => {
   return (
     <Container>
       <Float>
-        <h1>Contact</h1>
-      <Spacer>
-       <img src={divider} alt="visual divider" />
-     </Spacer>
       <form onSubmit={formik.handleSubmit}>
 
 
