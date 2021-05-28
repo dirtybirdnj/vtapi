@@ -21,6 +21,30 @@ justify-content: center;
 text-align: center;
 display: flex;
 
+fieldset {
+  display: block;
+  margin: 10px 0;
+}
+
+legend {
+  text-align: left;
+  margin: 20px 0px;
+}
+
+label {
+  align-items: flex-start;
+  margin-right: 0;
+  padding-bottom: 10px;
+
+  span:first-of-type {
+    padding 0px 5px;
+  }
+}
+
+span {
+  text-align: left;
+}
+
 h1 {
   font-size: 5em;
   margin-bottom: .3em;
@@ -36,7 +60,7 @@ const Spacer = styled.div`
 `;
 
 const Float = styled.div`
-  width: 60%;
+  width: 70%;
 `;
 
 
