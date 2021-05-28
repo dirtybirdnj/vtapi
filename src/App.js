@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
 
   h3 {
     font-size: 2em;
-    margin: 1em 0px;
+    margin-bottom: 0.5em;
     font-style: italic;
     font-weight: 100;
   }
@@ -55,8 +55,7 @@ const GlobalStyles = createGlobalStyle`
       line-height: 1.25;
     `};
     font-weight: 9  00;
-    margin-top: 1em;
-    margin-bottom: .5em;
+    margin-bottom: .25em;
     font-family: Lato;
   }
 
@@ -81,9 +80,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   p {
+    text-align: left;
     margin-bottom: 1em;
-    margin-left: 5em;
-    margin-right: 5em;
     line-height: 2em;
   }
 `;
