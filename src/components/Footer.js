@@ -12,7 +12,7 @@ import footerSettings from '../svgs/footerSettings.svg';
 
 const FooterContainer = styled.div`
 	margin-bottom: 3em;
-	padding-top:25px;
+	padding-top: ${isMobileOnly ? '15px' : '25px'};
 	display: flex;
 	flex-direction: column;
 `;

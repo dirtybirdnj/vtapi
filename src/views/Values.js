@@ -2,27 +2,8 @@ import divider from '../svgs/divider.svg';
 import styled from 'styled-components';
 
 const Container = styled.div`
-
   text-align: center;
   justify-content: center;
-
-
-  h1 {
-    font-size: 5em;
-    margin-bottom: .25em;
-  }
-
-  h3 {
-    font-size: 2em;
-    font-style: italic;
-    margin-bottom: 1em;
-  }
-
-  li{ 
-    font-size: 1em;
-    margin: 2em 0px;
-  }
-
 `;
 
 const Spacer = styled.div`
