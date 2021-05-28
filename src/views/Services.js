@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import divider from '../svgs/divider.svg';
 import topCap from '../svgs/topcap.svg';
+import { isMobileOnly } from 'react-device-detect';
 
 const Container = styled.div`
   justify-content: center;
   text-align: center;
+  ${isMobileOnly && `
+    padding: 0px 20px;
+  `}
 
   h1 {
     margin-bottom: 10px;
