@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Container = styled.div`
   text-align: center;
   justify-content: center;
+
+  h4 {
+    line-height: 1.5;
+  }
 `;
 
 const Spacer = styled.div`
@@ -26,7 +30,7 @@ function Values({
      </Spacer>
       
 
-      <h3>These are the guiding strategies and principals<br/> used to provide the best outcomes for customers and their projects.</h3>
+      <h4>These are the guiding strategies and principals<br/> used to provide the best outcomes for customers and their projects.</h4>
       
       <Spacer>
        <img src={divider} alt="visual divider" />

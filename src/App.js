@@ -50,7 +50,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h4 {
-    font-size: 1.5em;
+    font-size: ${isMobileOnly ? '1em' : '1.5em'};
     font-weight: bold;
     margin-bottom: .25em;
   }
@@ -63,15 +63,14 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ul {
-    width: auto;
-    margin: 0px 12em;
+    margin: ${isMobileOnly ? '0px 0px 0px 2em' : '0px 12em'};
   }
 
   li {
     font-size: 1em;
     line-height: 1.5em;
     text-align: left;
-    padding: 1em;
+    padding: 0.5em;
     list-style-type: disc;
   }
 
