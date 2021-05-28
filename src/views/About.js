@@ -1,23 +1,32 @@
 import { Link } from "react-router-dom";
+import { isMobileOnly } from 'react-device-detect';
 
 import styled from 'styled-components';
 import matPic from '../imgs/mat-at-vtcc.jpeg';
-import divider from '../svgs/divider.svg';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${isMobileOnly ? 'column' : 'row'};
   justify-content: space-between;
   max-width: 800px;
   margin: 0px auto;
 `;
 
 const ImageContainer = styled.div`
+  ${isMobileOnly && `
+    background-image: url(${matPic});
+    height: 375px;
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+    margin-bottom: 20px;
+  `};
+
   img {
     width: 400px;
     border-radius: 15px;
     height: auto;
-    display: flex;
+    display: ${isMobileOnly ? 'none' : 'flex'};
   }
 `;
 
@@ -38,6 +47,11 @@ function About({
 
   return (
     <Container {...props}>
+      {isMobileOnly && (
+        <ImageContainer>
+          <img src={matPic} alt="Mat Gilbert"/>
+        </ImageContainer>
+      )}  
       <Content>
         <Item>
           <h4>Who:</h4>
@@ -61,9 +75,11 @@ function About({
           <p><Link to="/values">Learn more about our Values</Link></p>
         </Item>
       </Content>
-      <ImageContainer>
-        <img src={matPic} alt="Mat Gilbert"/>
-      </ImageContainer>
+      {!isMobileOnly && (
+        <ImageContainer>
+          <img src={matPic} alt="Mat Gilbert"/>
+        </ImageContainer>
+      )}      
     </Container>
   );
 }

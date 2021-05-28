@@ -50,13 +50,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h4 {
-    font-size: ${isMobileOnly ? '1em' : '1.5em'};
-     ${isMobileOnly && `
-      line-height: 1.25;
-    `};
-    font-weight: 9  00;
+    font-size: 1.5em;
+    font-weight: bold;
     margin-bottom: .25em;
-    font-family: Lato;
   }
 
   small  {

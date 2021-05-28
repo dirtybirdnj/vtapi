@@ -6,6 +6,10 @@ import divider from '../svgs/divider.svg';
 const Container = styled.div`
 justify-content: center;
 text-align: center;
+
+ p {
+  text-align: center;
+ }
 `;
 
 const Spacer = styled.div`
@@ -22,6 +26,7 @@ const Spacer = styled.div`
     width: 100%;
     max-width: 500px;
     height: auto;
+    margin-top: 10px;
   }
 
   &:last-of-type {
@@ -51,7 +56,7 @@ function Home({
      </Spacer>
 
     <Spacer>
-      <h4>Providing Vermont with creative solutions to technical challenges since 2019</h4>
+      <p>Providing Vermont with creative solutions to technical challenges since 2019</p>
      </Spacer>
 
       <Spacer>
