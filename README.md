@@ -15,12 +15,12 @@ https://vtapi.netlify.app/
 
 ### TODO STYLING
 - [X] Services - About 90% done, maybe some spacers?
-- [X] Home - About 90% done, needs some space and fine tuning
-- [X] Values - Done
+- [X] Home - 100% done
+- [X] Values - 95% Done, needs final review
 - [ ] Whats an API - Needs alignment / structure to existing content. Logos / links for examples
-- [ ] About - Make two colums that take up equally 50% of width. Make picture / data both hug the inside of these two colums so the content is centered
+- [X] About - Two styles look good
 - [ ] Contact - Radio groups are misaligned. Form has CORS issues despite deploys to netlify
-- [ ] Header - Star spacers squish into nav items when resizing small... is this a
+- [X] Header - Star spacers squish into nav items when resizing small
 
 ### Build Instructions
 
