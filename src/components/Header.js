@@ -10,7 +10,7 @@ import logo from '../svgs/logo.svg';
 import menuDivider from '../svgs/menuDivider.svg';
 
 const HeaderContainer = styled.div`
-	padding-bottom: 25px;
+	padding-bottom: ${isMobileOnly ? '15px' : '25px'};
 	margin-top: 40px;
 `;
 
@@ -31,17 +31,21 @@ const Logo = styled.div`
 const MenuContainer = styled.div`
 	display: flex;
 	justify-content: ${isMobileOnly ? 'space-between' : 'center'};
+	padding: ${isMobileOnly ? '10px 0px 0px' :  '0px 0px 0px'};
+	flex-wrap: wrap;
+	justify-content: center;
 `;
 
 const StyledLink = styled(Link)`
 	color: #000;
 	line-height: 1.5;
 	font-size: 16px;
-	font-weight: 500;npm
-	margin: ${isMobileOnly ? '0' : '10px'};
+	font-weight: 500;
+	margin: ${isMobileOnly ? '0 10px 10px' : '10px'};
 	padding-right: ${isMobileOnly ? '0' : '26px'};
 	position: relative;
 	text-decoration: none;
+	white-space: no-wrap;
 
 	&:hover {
 		cursor: pointer;

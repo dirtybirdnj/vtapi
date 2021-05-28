@@ -7,64 +7,13 @@ import apiFastFood from "../svgs/api-fastfood.svg";
 const Container = styled.div`
   text-align: center;
   justify-content: center;
-
-  h1 {
-    font-size: 5em;
-    margin-bottom: .3em;
-    font-weight: 800;
-  }
-
-  h2 {
-    font-size: 3em;
-    margin: 1em .25em;
-    width: 100%;
-  }
-
-  h3 {
-    font-size: 2em;
-    margin: 1em 0px;
-    font-style: italic;
-    font-weight: 100;
-  }
-
-  h4 {
-    font-size: 1.5em;
-    font-weight: 9  00;
-    margin-top: 1em;
-    margin-bottom: .5em;
-    font-family: Lato;
-  }
-
-  small  {
-    font-size: .75em;
-    letter-spacing: .25em;
-    font-style: italic;
-    font-weight: 100;
-  }
-
-  ul {
-    width: auto;
-    margin: 0px 12em;
-  }
-
-  li {
-    font-size: 1em;
-    line-height: 1.5em;
-    text-align: left;
-    padding: 1em;
-    list-style-type: disc;
-
-  }
-
 `;
 
 const SpeakerTalk = styled.div`
-
   font-style: italic;
   padding: 2em 2em;
   padding-bottom: .5em;
   font-size: 1em;
-
 `;
 
 const Spacer = styled.div`
@@ -77,7 +26,6 @@ const Spacer = styled.div`
 const FlexContainer = styled.div`
   display: flex;
   flex-direction: row;
-
 `;
 
 const EndMessage = styled.div`
@@ -85,7 +33,6 @@ const EndMessage = styled.div`
   line-height: 2em;
   margin: 3em 5em;
   font-weight: 100;
-
 `;
 
 function ApiExplain({

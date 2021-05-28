@@ -7,22 +7,9 @@ const Container = styled.div`
 justify-content: center;
 text-align: center;
 
-h1 {
-  font-size: 5em;
-  margin-bottom: .3em;
-  font-weight: 800;
-}
-
-h2 {
-  font-size: 3em;
-}
-
-h3 {
-  font-size: 2em;
-  margin: 1   em 0px;
-  font-style: italic;
-  font-weight: 100;
-}
+ p {
+  text-align: center;
+ }
 `;
 
 const Spacer = styled.div`
@@ -30,6 +17,21 @@ const Spacer = styled.div`
   text-align: center;
   justify-content: center;
   margin: 1em 0px;
+
+  h4 {
+    padding-bottom: 20px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  &:last-of-type {
+    margin: 0;
+  }
 `;
 
 function Home({
@@ -39,7 +41,6 @@ function Home({
   return (
     <Container {...props}>
       <h1>Don't call it a website</h1>
-
      <Spacer>
        <img src={divider} alt="visual divider" />
      </Spacer>
@@ -55,7 +56,7 @@ function Home({
      </Spacer>
 
     <Spacer>
-     <h4>Providing Vermont with creative solutions to technical challenges since 2019</h4>
+      <p>Providing Vermont with creative solutions to technical challenges since 2019</p>
      </Spacer>
 
       <Spacer>
