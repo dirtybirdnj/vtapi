@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.ec7c8c83.chunk.js",
-    "main.js.map": "/static/js/main.ec7c8c83.chunk.js.map",
+    "main.js": "/static/js/main.9110f253.chunk.js",
+    "main.js.map": "/static/js/main.9110f253.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c9949feb.js",
     "runtime-main.js.map": "/static/js/runtime-main.c9949feb.js.map",
-    "static/js/2.6bb48ae8.chunk.js": "/static/js/2.6bb48ae8.chunk.js",
-    "static/js/2.6bb48ae8.chunk.js.map": "/static/js/2.6bb48ae8.chunk.js.map",
+    "static/js/2.1aff83f2.chunk.js": "/static/js/2.1aff83f2.chunk.js",
+    "static/js/2.1aff83f2.chunk.js.map": "/static/js/2.1aff83f2.chunk.js.map",
     "static/js/3.75dd0562.chunk.js": "/static/js/3.75dd0562.chunk.js",
     "static/js/3.75dd0562.chunk.js.map": "/static/js/3.75dd0562.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.6bb48ae8.chunk.js.LICENSE.txt": "/static/js/2.6bb48ae8.chunk.js.LICENSE.txt",
+    "static/js/2.1aff83f2.chunk.js.LICENSE.txt": "/static/js/2.1aff83f2.chunk.js.LICENSE.txt",
     "static/media/api-fastfood.3747e7f5.svg": "/static/media/api-fastfood.3747e7f5.svg",
     "static/media/divider.b62a6075.svg": "/static/media/divider.b62a6075.svg",
     "static/media/footer.b63b1312.svg": "/static/media/footer.b63b1312.svg",
@@ -23,7 +23,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c9949feb.js",
-    "static/js/2.6bb48ae8.chunk.js",
-    "static/js/main.ec7c8c83.chunk.js"
+    "static/js/2.1aff83f2.chunk.js",
+    "static/js/main.9110f253.chunk.js"
   ]
 }
