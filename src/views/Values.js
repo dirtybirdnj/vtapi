@@ -1,6 +1,8 @@
 import divider from '../svgs/divider.svg';
 import styled from 'styled-components';
 
+import topCap from '../svgs/topcap.svg';
+
 const Container = styled.div`
   text-align: center;
   justify-content: center;
@@ -24,10 +26,7 @@ function Values({
   return (
     <Container {...props}>
 	    <h1>Values</h1>
-
-      <Spacer>
-       <img src={divider} alt="visual divider" />
-     </Spacer>
+       <img className="topcap" src={topCap} alt="Applications, Programming, Interfaces" />
       
 
       <h4>These are the guiding strategies and principals<br/> used to provide the best outcomes for customers and their projects.</h4>

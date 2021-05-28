@@ -9,17 +9,6 @@ const Container = styled.div`
   ${isMobileOnly && `
     padding: 0px 20px;
   `}
-
-  h1 {
-    margin-bottom: 10px;
-  }
-
-  .topcap {
-    height: 60px;
-    width: 200px;
-    margin: 0px 0px 25px;;
-
-  }
 `;
 
 const Content = styled.div`

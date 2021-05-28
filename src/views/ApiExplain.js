@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
-
 import styled from 'styled-components';
 
 import apiFastFood from "../svgs/api-fastfood.svg";
+import topCap from '../svgs/topcap.svg';
 
 const Container = styled.div`
   text-align: center;
   justify-content: center;
+
+  h4 {
+    text-align: left;
+  }
 `;
 
 const SpeakerTalk = styled.div`
@@ -42,7 +46,8 @@ function ApiExplain({
   return (
     <Container {...props}>
       <h1>What is an API?</h1>
-      <p>The term API stands for:</p>
+      <img className="topcap" src={topCap} alt="Applications, Programming, Interfaces" />
+      <h4>The term API stands for:</h4>
       <h2>Application Programming Interface</h2>
       <h3>It's a way for developers to automate systems and software designed to be modular, extendable or integrated into other systems.</h3>
       <h2>APIs are the glue that connect modern software and networks.</h2>

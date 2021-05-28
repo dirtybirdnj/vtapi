@@ -17,6 +17,13 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Alata', sans-serif;
   }
 
+  .topcap {
+    height: 60px;
+    width: 200px;
+    margin: 0px 0px 25px;;
+
+  }
+
   a {
     color: #000;
     text-decoration: underline;
@@ -29,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: ${isMobileOnly ? '2.5em' : '4em'};
-    margin-bottom: .5em;
+    margin-bottom: 10px;
     font-weight: 800;
 
     ${isMobileOnly && `
