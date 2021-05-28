@@ -17,6 +17,16 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Alata', sans-serif;
   }
 
+  a {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   h1 {
     font-size: ${isMobileOnly ? '2.5em' : '5em'};
     margin-bottom: .5em;

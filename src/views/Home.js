@@ -20,6 +20,7 @@ const Spacer = styled.div`
 
   img {
     width: 100%;
+    max-width: 500px;
     height: auto;
   }
 
