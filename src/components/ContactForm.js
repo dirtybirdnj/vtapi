@@ -50,7 +50,9 @@ const validationSchema = yup.object({
 
 const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, reciept) => {
 
-  const dataString = "entry.524352911=" + encodeURI(name) + "&entry.183003631" + encodeURI(freeTypeField) + "&entry.1855206624=" + encodeURI(contactMethod) + "&entry.1255994120=" + encodeURI(helpType) + "&emailAddress=" + encodeURI(email) + "&emailReciept=" + encodeURI(reciept)
+  const dataString = "entry.524352911=" + encodeURI(name) + "&entry.183003631=" + encodeURI(freeTypeField) + "&entry.1855206624=" + encodeURI(contactMethod) + "&entry.1255994120=" + encodeURI(helpType) + "&emailAddress=" + encodeURI(email) + "&emailReciept=" + encodeURI(reciept)
+
+  //console.log(dataString);
 
   Axios({
     "method": "POST",
@@ -62,6 +64,7 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
     "data": dataString
   }).then((e) => {
 
+    console.log(dataString);
     console.log(e, 'form submitted');
 
 
@@ -79,7 +82,7 @@ const WithMaterialUI = () => {
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
 
-      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.sendreciept);
+      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept);
 
     },
   });
