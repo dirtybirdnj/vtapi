@@ -1,7 +1,5 @@
 import ContactForm from '../components/ContactForm';
 import styled from 'styled-components';
-
-import divider from '../svgs/divider.svg';
 import topCap from '../svgs/topcap.svg';
 
 const Container = styled.div`
