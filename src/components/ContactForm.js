@@ -70,7 +70,10 @@ const validationSchema = yup.object({
   email: yup
     .string('Enter your email')
     .email('Enter a valid email')
-    .required('Email is required')
+    .required('Email is required'),
+  details: yup
+    .string('Enter a brief description of your request')
+    .required('Details about the request are required')
 });
 
 
@@ -90,7 +93,7 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
     "data": dataString
   }).then((e) => {
 
-    console.log(dataString);
+    // console.log(dataString);
     console.log(e, 'form submitted');
 
 
@@ -103,6 +106,7 @@ const WithMaterialUI = () => {
     initialValues: {
       email: 'email@domain.tld',
       name: 'Your Name',
+      contacttype: 'Video'
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -116,8 +120,16 @@ const WithMaterialUI = () => {
   return (
     <Container>
       <Float>
-      <form onSubmit={formik.handleSubmit}>
 
+      <div>
+        <h2>Thanks for reaching out!</h2>
+        <Spacer style={{"text-align" : "center"}}>
+          <p>We generally try to respond to requests within 24 to 36 hours.</p>
+          <p>Have a great day and thank you for saying hello!</p>
+        </Spacer>
+      </div>
+
+      <form onSubmit={formik.handleSubmit}>
 
         <Spacer>
         <TextField
@@ -180,7 +192,7 @@ const WithMaterialUI = () => {
           name="details"
           multiline
           rows={4}
-          defaultValue="Enter some details about your project or request"
+          defaultValue=""
           value={formik.values.details}
           onChange={formik.handleChange}
           error={formik.touched.details && Boolean(formik.errors.details)}
@@ -191,6 +203,7 @@ const WithMaterialUI = () => {
 
         <Spacer>
         <FormControlLabel
+          checked
           control={<Checkbox checked={formik.values.sendreciept} onChange={formik.handleChange} name="sendreciept" />}
           label="Send yourself a reciept of this form?"
         />
@@ -198,6 +211,12 @@ const WithMaterialUI = () => {
 
         <Spacer>
         <ReCAPTCHA
+          style={ {
+                  "justify-content" : "center",
+                  width: "100%",
+                  "text-align": "center",
+                  display: "flex"
+                } }
           sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
           onChange={formik.handleChange}
         />
