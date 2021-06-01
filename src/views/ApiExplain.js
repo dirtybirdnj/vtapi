@@ -10,8 +10,12 @@ const Container = styled.div`
   text-align: center;
   justify-content: center;
 
+  p {
+    font-size: ${isMobileOnly ? '.75em' : '1em'};;
+  }
+
   h4 {
-    text-align: left;
+    text-align: center;
     padding-top: 30px;
 
     &:first-of-type {
@@ -147,7 +151,7 @@ function ApiExplain({
           <SpeakerTalk>"Hello, can I take your order?"</SpeakerTalk>
           <img src={apiFastFood} alt="Example of interface showing a fast-food ordering sign with speaker and food options"/>
         </Spacer>
-        
+
       </FlexColumnContainer>
 
       <Spacer>
@@ -156,7 +160,7 @@ function ApiExplain({
 
       <h3 className="space">Three types of APIs:</h3>
 
-      
+
       <FlexContainer>
         <div>
           <h4>1. Software:</h4>
@@ -172,7 +176,7 @@ function ApiExplain({
       </FlexContainer>
 
 
-      
+
       <FlexContainer>
         <div>
         <h4>2. Service:</h4>
@@ -189,7 +193,7 @@ function ApiExplain({
       </FlexContainer>
 
 
-      
+
       <FlexContainer>
         <div>
         <h4>3. Application:</h4>
@@ -214,10 +218,8 @@ function ApiExplain({
       need help with?</h2>
     <Spacer>
 
-    <EndMessage>Whether you're building software from scratch or extending an existing platform, you're going to have to deal with APIs at some point. Our experience building new systems and integrating with services can help anticipate problems and improve outcomes.</EndMessage>
+    <EndMessage>Whether you're building software from scratch or extending an existing platform, our experience building new systems and integrating with services can help anticipate problems and improve outcomes.</EndMessage>
     </Spacer>
-
-
       <Link to="/contact">Contact Us Today to Get Started</Link>
     </Container>
   );

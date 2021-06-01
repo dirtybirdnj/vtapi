@@ -52,6 +52,22 @@ h1 {
   margin-bottom: .3em;
   font-weight: 800;
 }
+
+$.recaptcha {
+
+  justify-content : center,
+  width: 100%,
+  text-align: center,
+  display: flex
+}
+`;
+
+const StyledReCAPTCHA = styled(ReCAPTCHA)`
+  border: 1px solid red;
+  justify-content : center,
+  width: 100%,
+  text-align: center,
+  display: flex
 `;
 
 const Spacer = styled.div`
@@ -63,6 +79,20 @@ const Spacer = styled.div`
 
 const Float = styled.div`
   width: ${isMobileOnly ? '90%' : '70%'};
+`;
+
+const FormCompleteMessage = styled.div`
+  border: 1px solid red;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  display: none;
+
+  h2, p {
+    text-align: center;
+  }
+
 `;
 
 
@@ -103,14 +133,17 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
 
 const WithMaterialUI = () => {
   const formik = useFormik({
+
+
+
     initialValues: {
       email: 'email@domain.tld',
       name: 'Your Name',
-      contacttype: 'Video'
+      contacttype: 'video'
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      //alert(JSON.stringify(values, null, 2));
 
       SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept);
 
@@ -121,15 +154,12 @@ const WithMaterialUI = () => {
     <Container>
       <Float>
 
-      <div>
+      <FormCompleteMessage>
         <h2>Thanks for reaching out!</h2>
-        <Spacer style={{"text-align" : "center"}}>
-          <p>We generally try to respond to requests within 24 to 36 hours.</p>
-          <p>Have a great day and thank you for saying hello!</p>
-        </Spacer>
-      </div>
-
-      <form onSubmit={formik.handleSubmit}>
+        <p>We generally try to respond to requests within 24 to 36 hours.</p>
+        <p>Have a great day and thank you for saying hello!</p>
+      </FormCompleteMessage>
+      <form id="contactForm" onSubmit={formik.handleSubmit}>
 
         <Spacer>
         <TextField
@@ -161,16 +191,16 @@ const WithMaterialUI = () => {
         <Spacer>
         <FormControl component="fieldset">
         <FormLabel component="legend">How would you like to talk?</FormLabel>
-        <RadioGroup aria-label="type of request" name="contacttype">
-            <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="video" onChange={formik.handleChange} />} label="Video" />
-            <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="email" onChange={formik.handleChange} />} label="Email" />
-            <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="phone" onChange={formik.handleChange} />} label="Phone" />
+        <RadioGroup aria-label="type of request" value={formik.values.contacttype} name="contacttype">
+            <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="Video" onChange={formik.handleChange} />} label="Video" />
+            <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="Email" onChange={formik.handleChange} />} label="Email" />
+            <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="Phone" onChange={formik.handleChange} />} label="Phone" />
         </RadioGroup>
         </FormControl>
 
         <FormControl component="fieldset">
         <FormLabel component="legend">What do you need help with?</FormLabel>
-        <RadioGroup aria-label="type of request" name="requesttype">
+        <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype}>
             <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi" onChange={formik.handleChange} />} label="I need to add an API to a thing I already have" />
             <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate" onChange={formik.handleChange}/>} label="I need my existing system to talk to a new API or third party service" />
             <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting" onChange={formik.handleChange} />} label="I want support maintaining an existing web app" />
@@ -210,13 +240,8 @@ const WithMaterialUI = () => {
         </Spacer>
 
         <Spacer>
-        <ReCAPTCHA
-          style={ {
-                  "justify-content" : "center",
-                  width: "100%",
-                  "text-align": "center",
-                  display: "flex"
-                } }
+        <StyledReCAPTCHA
+          className="recaptcha"
           sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
           onChange={formik.handleChange}
         />
