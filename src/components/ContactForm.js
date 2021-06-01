@@ -12,6 +12,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Axios from 'axios';
 import styled from 'styled-components';
 import { isMobileOnly } from 'react-device-detect';
+import ReCAPTCHA from "react-google-recaptcha";
 
 import divider from '../svgs/divider.svg';
 
@@ -192,6 +193,13 @@ const WithMaterialUI = () => {
         <FormControlLabel
           control={<Checkbox checked={formik.values.sendreciept} onChange={formik.handleChange} name="sendreciept" />}
           label="Send yourself a reciept of this form?"
+        />
+        </Spacer>
+
+        <Spacer>
+        <ReCAPTCHA
+          sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
+          onChange={formik.handleChange}
         />
         </Spacer>
 
