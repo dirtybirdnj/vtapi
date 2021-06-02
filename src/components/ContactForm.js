@@ -87,7 +87,6 @@ const FormCompleteMessage = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  display: none;
 
   h2, p {
     text-align: center;
@@ -116,7 +115,7 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
     "&emailAddress=" + encodeURI(email) +
     "&emailReciept=" + encodeURI(reciept)
 
-  //console.log(dataString);
+    console.log(dataString);
 
   Axios({
     "method": "POST",
@@ -129,7 +128,7 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
   }).then((e) => {
 
     // console.log(dataString);
-    console.log(e, 'form submitted');
+    console.log(e, 'form submitted, inside axios');
 
 
   });
@@ -137,130 +136,150 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
 }
 
 const WithMaterialUI = () => {
+
+  let formSubmitted = false;
+
   const formik = useFormik({
 
     initialValues: {
       email: 'email@domain.tld',
       name: 'Your Name',
       contacttype: 'video',
-      requesttype: ''
+      requesttype: '',
+      sendreciept: true
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
       //alert(JSON.stringify(values, null, 2));
       console.log(values);
-      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept);
+      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
+
+        console.log('form submitted / done')
+        console.log(formSubmitted);
+        formSubmitted = true;
+
+      });
+
 
     },
   });
 
-  return (
+
+
+
+  if(!formSubmitted){
+    return(
+    <Float>
+    <form id="contactForm" onSubmit={formik.handleSubmit}>
+      <Spacer>
+      <TextField
+        fullWidth
+        id="name"
+        name="name"
+        label="Name"
+
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        error={formik.touched.password && Boolean(formik.errors.password)}
+        helperText={formik.touched.password && formik.errors.password}
+      />
+      </Spacer>
+
+      <Spacer>
+      <TextField
+        fullWidth
+        id="email"
+        name="email"
+        label="Email"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        error={formik.touched.email && Boolean(formik.errors.email)}
+        helperText={formik.touched.email && formik.errors.email}
+      />
+      </Spacer>
+
+      <Spacer>
+      <FormControl component="fieldset">
+      <FormLabel component="legend">How would you like to talk?</FormLabel>
+      <RadioGroup aria-label="type of request" name="contacttype" value={formik.values.contacttype} onChange={formik.handleChange}>
+          <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="Video" />} label="Video" />
+          <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="Email" />} label="Email" />
+          <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="Phone" />} label="Phone" />
+      </RadioGroup>
+      </FormControl>
+
+      <FormControl component="fieldset">
+      <FormLabel component="legend">What do you need help with?</FormLabel>
+      <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype}>
+          <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi" onChange={formik.handleChange} />} label="I need to add an API to a thing I already have" />
+          <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate" onChange={formik.handleChange}/>} label="I need my existing system to talk to a new API or third party service" />
+          <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting" onChange={formik.handleChange} />} label="I want support maintaining an existing web app" />
+          <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="fromscratch" onChange={formik.handleChange} />} label="I have a business problem and I want to build something from scratch" />
+          <FormControlLabel value="education" control={<Radio name="requesttype" value="education" onChange={formik.handleChange} />} label="I need help understanding some technology problem my business has" />
+          <FormControlLabel value="creative" control={<Radio name="requesttype" value="creative" onChange={formik.handleChange} />} label="I would like you to do something creative for our organization" />
+          <FormControlLabel value="other" control={<Radio name="requesttype" value="other" onChange={formik.handleChange}/>} label="None of the above, what I need defies labels" />
+      </RadioGroup>
+      </FormControl>
+      </Spacer>
+
+      <Spacer>
+
+      <FormControl component="fieldset">
+      <FormLabel component="legend">Please provide some details about your request</FormLabel>
+      <TextField
+        fullWidth
+        id="details"
+        name="details"
+        multiline
+        rows={4}
+        defaultValue=""
+        value={formik.values.details}
+        onChange={formik.handleChange}
+        error={formik.touched.details && Boolean(formik.errors.details)}
+        helperText={formik.touched.details && formik.errors.details}
+      />
+      </FormControl>
+      </Spacer>
+
+      <Spacer>
+      <FormControlLabel
+        checked
+        control={<Checkbox checked={formik.values.sendreciept} onChange={formik.handleChange} name="sendreciept" />}
+        label="Send yourself a reciept of this form?"
+      />
+      </Spacer>
+
+      <Spacer>
+      <StyledReCAPTCHA
+        className="recaptcha"
+        sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
+        onChange={formik.handleChange}
+      />
+      </Spacer>
+
+      <Button color="primary" variant="contained" fullWidth type="submit">
+        Submit
+      </Button>
+    </form>
+    <Spacer>
+     <img src={divider} alt="visual divider" />
+   </Spacer>
+    </Float>
+    );
+  } else {
+    return(
     <Container>
       <Float>
-
-      <FormCompleteMessage>
-        <h2>Thanks for reaching out!</h2>
-        <p>We generally try to respond to requests within 24 to 36 hours.</p>
-        <p>Have a great day and thank you for saying hello!</p>
-      </FormCompleteMessage>
-      <form id="contactForm" onSubmit={formik.handleSubmit}>
-
-        <Spacer>
-        <TextField
-          fullWidth
-          id="name"
-          name="name"
-          label="Name"
-
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          error={formik.touched.password && Boolean(formik.errors.password)}
-          helperText={formik.touched.password && formik.errors.password}
-        />
-        </Spacer>
-
-        <Spacer>
-        <TextField
-          fullWidth
-          id="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-        </Spacer>
-
-        <Spacer>
-        <FormControl component="fieldset">
-        <FormLabel component="legend">How would you like to talk?</FormLabel>
-        <RadioGroup aria-label="type of request" name="contacttype" value={formik.values.contacttype}>
-            <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="Video" onChange={formik.handleChange} />} label="Video" />
-            <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="Email" onChange={formik.handleChange} />} label="Email" />
-            <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="Phone" onChange={formik.handleChange} />} label="Phone" />
-        </RadioGroup>
-        </FormControl>
-
-        <FormControl component="fieldset">
-        <FormLabel component="legend">What do you need help with?</FormLabel>
-        <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype}>
-            <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi" onChange={formik.handleChange} />} label="I need to add an API to a thing I already have" />
-            <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate" onChange={formik.handleChange}/>} label="I need my existing system to talk to a new API or third party service" />
-            <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting" onChange={formik.handleChange} />} label="I want support maintaining an existing web app" />
-            <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="fromscratch" onChange={formik.handleChange} />} label="I have a business problem and I want to build something from scratch" />
-            <FormControlLabel value="education" control={<Radio name="requesttype" value="education" onChange={formik.handleChange} />} label="I need help understanding some technology problem my business has" />
-            <FormControlLabel value="creative" control={<Radio name="requesttype" value="creative" onChange={formik.handleChange} />} label="I would like you to do something creative for our organization" />
-            <FormControlLabel value="other" control={<Radio name="requesttype" value="other" onChange={formik.handleChange}/>} label="None of the above, what I need defies labels" />
-        </RadioGroup>
-        </FormControl>
-        </Spacer>
-
-        <Spacer>
-
-        <FormControl component="fieldset">
-        <FormLabel component="legend">Please provide some details about your request</FormLabel>
-        <TextField
-          fullWidth
-          id="details"
-          name="details"
-          multiline
-          rows={4}
-          defaultValue=""
-          value={formik.values.details}
-          onChange={formik.handleChange}
-          error={formik.touched.details && Boolean(formik.errors.details)}
-          helperText={formik.touched.details && formik.errors.details}
-        />
-        </FormControl>
-        </Spacer>
-
-        <Spacer>
-        <FormControlLabel
-          checked
-          control={<Checkbox checked={formik.values.sendreciept} onChange={formik.handleChange} name="sendreciept" />}
-          label="Send yourself a reciept of this form?"
-        />
-        </Spacer>
-
-        <Spacer>
-        <StyledReCAPTCHA
-          className="recaptcha"
-          sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
-          onChange={formik.handleChange}
-        />
-        </Spacer>
-
-        <Button color="primary" variant="contained" fullWidth type="submit">
-          Submit
-        </Button>
-      </form>
-      <Spacer>
-       <img src={divider} alt="visual divider" />
-     </Spacer>
-      </Float>
+        <FormCompleteMessage>
+          <h2>Thanks for reaching out!</h2>
+          <p>We generally try to respond to requests within 24 to 36 hours.</p>
+          <p>Have a great day and thank you for saying hello!</p>
+        </FormCompleteMessage>
+    </Float>
     </Container>
-  );
+    );
+  }
+
 };
 
 export default WithMaterialUI;
