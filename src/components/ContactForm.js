@@ -109,7 +109,12 @@ const validationSchema = yup.object({
 
 const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, reciept) => {
 
-  const dataString = "entry.524352911=" + encodeURI(name) + "&entry.183003631=" + encodeURI(freeTypeField) + "&entry.1855206624=" + encodeURI(contactMethod) + "&entry.1255994120=" + encodeURI(helpType) + "&emailAddress=" + encodeURI(email) + "&emailReciept=" + encodeURI(reciept)
+  const dataString = "entry.524352911=" + encodeURI(name) +
+    "&entry.183003631=" + encodeURI(freeTypeField) +
+    "&entry.1855206624=" + encodeURI(contactMethod) +
+    "&entry.1255994120=" + encodeURI(helpType) +
+    "&emailAddress=" + encodeURI(email) +
+    "&emailReciept=" + encodeURI(reciept)
 
   //console.log(dataString);
 
@@ -134,17 +139,16 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
 const WithMaterialUI = () => {
   const formik = useFormik({
 
-
-
     initialValues: {
       email: 'email@domain.tld',
       name: 'Your Name',
-      contacttype: 'video'
+      contacttype: 'video',
+      requesttype: ''
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
       //alert(JSON.stringify(values, null, 2));
-
+      console.log(values);
       SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept);
 
     },
@@ -191,7 +195,7 @@ const WithMaterialUI = () => {
         <Spacer>
         <FormControl component="fieldset">
         <FormLabel component="legend">How would you like to talk?</FormLabel>
-        <RadioGroup aria-label="type of request" value={formik.values.contacttype} name="contacttype">
+        <RadioGroup aria-label="type of request" name="contacttype" value={formik.values.contacttype}>
             <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="Video" onChange={formik.handleChange} />} label="Video" />
             <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="Email" onChange={formik.handleChange} />} label="Email" />
             <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="Phone" onChange={formik.handleChange} />} label="Phone" />
