@@ -65,9 +65,8 @@ $.recaptcha {
 const StyledReCAPTCHA = styled(ReCAPTCHA)`
   border: 1px solid red;
   justify-content : center,
-  width: 100%,
   text-align: center,
-  display: flex
+  display: flex;
 `;
 
 const Spacer = styled.div`
@@ -134,11 +133,14 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
     console.log(e, 'form submitted, inside axios');
 
 
+  }).catch(function (error) {
+    // handle error
+    console.log('axios error', error);
   });
 
 }
-
-const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }) => {
+//const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }) => {
+const WithMaterialUI = ({ props }) => {
 
   let formSubmitted = false;
 
@@ -154,21 +156,18 @@ const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }
     validationSchema: validationSchema,
     onSubmit: (values) => {
       //alert(JSON.stringify(values, null, 2));
-      console.log(values);
-      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
-
-        console.log('form submitted / done')
-        console.log(formSubmitted);
-        formSubmitted = true;
-
-      });
+      console.log('about to submit to google',values);
+      // SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
+      //   console.log('form submitted / done')
+      //   console.log(formSubmitted);
+      // });
 
 
     },
+    onChange: (values) => {
+      console.log('something changed', values);
+    }
   });
-
-
-
 
   if(!formSubmitted){
     return(
@@ -181,11 +180,8 @@ const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }
         id="name"
         name="name"
         label="Name"
-
-        value={formik.values.password}
+        value={formik.values.name}
         onChange={formik.handleChange}
-        error={formik.touched.password && Boolean(formik.errors.password)}
-        helperText={formik.touched.password && formik.errors.password}
       />
       </Spacer>
 
@@ -214,14 +210,14 @@ const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }
 
       <FormControl component="fieldset">
       <FormLabel component="legend">What do you need help with?</FormLabel>
-      <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype}>
-          <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi" onChange={formik.handleChange} />} label="I need to add an API to a thing I already have" />
-          <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate" onChange={formik.handleChange}/>} label="I need my existing system to talk to a new API or third party service" />
-          <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting" onChange={formik.handleChange} />} label="I want support maintaining an existing web app" />
-          <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="fromscratch" onChange={formik.handleChange} />} label="I have a business problem and I want to build something from scratch" />
-          <FormControlLabel value="education" control={<Radio name="requesttype" value="education" onChange={formik.handleChange} />} label="I need help understanding some technology problem my business has" />
-          <FormControlLabel value="creative" control={<Radio name="requesttype" value="creative" onChange={formik.handleChange} />} label="I would like you to do something creative for our organization" />
-          <FormControlLabel value="other" control={<Radio name="requesttype" value="other" onChange={formik.handleChange}/>} label="None of the above, what I need defies labels" />
+      <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype} onChange={formik.handleChange}>
+          <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi"  />} label="I need to add an API to a thing I already have" />
+          <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate"/>} label="I need my existing system to talk to a new API or third party service" />
+          <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting"  />} label="I want support maintaining an existing web app" />
+          <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="fromscratch"  />} label="I have a business problem and I want to build something from scratch" />
+          <FormControlLabel value="education" control={<Radio name="requesttype" value="education"  />} label="I need help understanding some technology problem my business has" />
+          <FormControlLabel value="creative" control={<Radio name="requesttype" value="creative"  />} label="I would like you to do something creative for our organization" />
+          <FormControlLabel value="other" control={<Radio name="requesttype" value="other" />} label="None of the above, what I need defies labels" />
       </RadioGroup>
       </FormControl>
       </Spacer>
