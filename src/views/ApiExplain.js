@@ -170,7 +170,7 @@ function ApiExplain({
           <p>Examples:</p>
           <ul>
             <li><a href="https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html">AWS SDK</a></li>
-            <li>Google Maps</li>
+            <li><a href="https://developers.google.com/maps/documentation/maps-static/overview">Google Maps</a></li>
           </ul>
         </div>
       </FlexContainer>
@@ -185,9 +185,9 @@ function ApiExplain({
         <div>
           <p>Examples:</p>
           <ul>
-            <li>Stripe</li>
-            <li>Twilio</li>
-            <li>Sendgrid</li>
+            <li><a href="https://stripe.com/docs/api">Stripe</a></li>
+            <li><a href="https://www.twilio.com/docs/sms">Twilio</a></li>
+            <li><a href="https://sendgrid.com/docs/api-reference/">Sendgrid</a></li>
           </ul>
         </div>
       </FlexContainer>
@@ -202,12 +202,12 @@ function ApiExplain({
         <div>
           <p>Examples:</p>
           <ul>
-            <li>Wordpress API</li>
-            <li>Hapi</li>
-            <li>Strapi</li>
-            <li>Flask</li>
-            <li>Laravel</li>
-            <li>Next.js</li>
+            <li><a href="https://developer.wordpress.org/rest-api/">Wordpress API</a></li>
+            <li><a href="https://hapi.dev/api/?v=20.1.3">Hapi</a></li>
+            <li><a href="https://strapi.io/documentation/developer-docs/latest/getting-started/quick-start.html#_4-create-a-category-content-type">Strapi</a></li>
+            <li><a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a></li>
+            <li><a href="https://laravel.com/docs/8.x">Laravel</a></li>
+            <li><a href="https://nextjs.org/docs/getting-started">Next.js</a></li>
           </ul>
         </div>
       </FlexContainer>

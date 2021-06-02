@@ -102,7 +102,10 @@ const validationSchema = yup.object({
     .required('Email is required'),
   details: yup
     .string('Enter a brief description of your request')
-    .required('Details about the request are required')
+    .required('Details about the request are required'),
+  recaptcha: yup
+    .string()
+    .required(),
 });
 
 
@@ -135,16 +138,16 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
 
 }
 
-const WithMaterialUI = () => {
+const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }) => {
 
   let formSubmitted = false;
 
   const formik = useFormik({
 
     initialValues: {
-      email: 'email@domain.tld',
-      name: 'Your Name',
-      contacttype: 'video',
+      email: '',
+      name: '',
+      contacttype: '',
       requesttype: '',
       sendreciept: true
     },
@@ -169,6 +172,7 @@ const WithMaterialUI = () => {
 
   if(!formSubmitted){
     return(
+    <Container>
     <Float>
     <form id="contactForm" onSubmit={formik.handleSubmit}>
       <Spacer>
@@ -202,9 +206,9 @@ const WithMaterialUI = () => {
       <FormControl component="fieldset">
       <FormLabel component="legend">How would you like to talk?</FormLabel>
       <RadioGroup aria-label="type of request" name="contacttype" value={formik.values.contacttype} onChange={formik.handleChange}>
-          <FormControlLabel value="video" control={<Radio name="contacttype" id="contacttype" value="Video" />} label="Video" />
-          <FormControlLabel value="email" control={<Radio name="contacttype" id="contacttype" value="Email" />} label="Email" />
-          <FormControlLabel value="phone" control={<Radio name="contacttype" id="contacttype" value="Phone" />} label="Phone" />
+          <FormControlLabel value="video" control={<Radio name="contacttype" value="Video" />} label="Video" />
+          <FormControlLabel value="email" control={<Radio name="contacttype" value="Email" />} label="Email" />
+          <FormControlLabel value="phone" control={<Radio name="contacttype" value="Phone" />} label="Phone" />
       </RadioGroup>
       </FormControl>
 
@@ -254,6 +258,7 @@ const WithMaterialUI = () => {
         className="recaptcha"
         sitekey="6LcH8wYbAAAAAPfLmsbEMXlf3itigDV-NTsGdGdv"
         onChange={formik.handleChange}
+        render="explicit"
       />
       </Spacer>
 
@@ -265,6 +270,7 @@ const WithMaterialUI = () => {
      <img src={divider} alt="visual divider" />
    </Spacer>
     </Float>
+    </Container>
     );
   } else {
     return(
