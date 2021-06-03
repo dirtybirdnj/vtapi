@@ -159,10 +159,10 @@ const WithMaterialUI = () => {
       //alert(JSON.stringify(values, null, 2));
       console.log('about to submit to google',values);
       //this.state = { formSibmitted: true };
-      // SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
-      //   console.log('form submitted / done')
-      //   console.log(formSubmitted);
-      // });
+      SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
+        console.log('form submitted / done')
+        console.log(formSubmitted);
+      });
 
 
     },
