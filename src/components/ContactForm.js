@@ -140,9 +140,10 @@ const SubmitGoogleForm = (email, name, contactMethod, helpType, freeTypeField, r
 
 }
 //const WithMaterialUI = ({ values, errors, touched, handleSubmit, setFieldValue }) => {
-const WithMaterialUI = ({ props }) => {
+const WithMaterialUI = () => {
 
   let formSubmitted = false;
+  // this.state = { formSubmitted: false };
 
   const formik = useFormik({
 
@@ -157,6 +158,7 @@ const WithMaterialUI = ({ props }) => {
     onSubmit: (values) => {
       //alert(JSON.stringify(values, null, 2));
       console.log('about to submit to google',values);
+      //this.state = { formSibmitted: true };
       // SubmitGoogleForm(values.email, values.name, values.contacttype, values.requesttype, values.details, values.sendreciept).then(() => {
       //   console.log('form submitted / done')
       //   console.log(formSubmitted);
@@ -211,13 +213,12 @@ const WithMaterialUI = ({ props }) => {
       <FormControl component="fieldset">
       <FormLabel component="legend">What do you need help with?</FormLabel>
       <RadioGroup aria-label="type of request" name="requesttype" value={formik.values.requesttype} onChange={formik.handleChange}>
-          <FormControlLabel value="addapi" control={<Radio name="requesttype" value="addapi"  />} label="I need to add an API to a thing I already have" />
-          <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="apiintegrate"/>} label="I need my existing system to talk to a new API or third party service" />
-          <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="supportexisting"  />} label="I want support maintaining an existing web app" />
-          <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="fromscratch"  />} label="I have a business problem and I want to build something from scratch" />
-          <FormControlLabel value="education" control={<Radio name="requesttype" value="education"  />} label="I need help understanding some technology problem my business has" />
-          <FormControlLabel value="creative" control={<Radio name="requesttype" value="creative"  />} label="I would like you to do something creative for our organization" />
-          <FormControlLabel value="other" control={<Radio name="requesttype" value="other" />} label="None of the above, what I need defies labels" />
+          <FormControlLabel value="addapi" control={<Radio name="requesttype" value="I need to add an API to a thing I already have" />} label="I need to add an API to a thing I already have" />
+          <FormControlLabel value="apiintegrate" control={<Radio name="requesttype" value="I need my existing system to talk to a new API or third party service"/>} label="I need my existing system to talk to a new API or third party service" />
+          <FormControlLabel value="supportexisting" control={<Radio name="requesttype" value="I want support maintaining an existing web app" />} label="I want support maintaining an existing web app" />
+          <FormControlLabel value="fromscratch" control={<Radio name="requesttype" value="I have a business problem and I want to build something from scratch"  />} label="I have a business problem and I want to build something from scratch" />
+          <FormControlLabel value="education" control={<Radio name="requesttype" value="I need help understanding some technology problem my business has"  />} label="I need help understanding some technology problem my business has" />
+          <FormControlLabel value="creative" control={<Radio name="requesttype" value="I would like you to do something creative for our organization" />} label="I would like you to do something creative for our organization" />
       </RadioGroup>
       </FormControl>
       </Spacer>
