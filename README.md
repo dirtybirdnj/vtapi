@@ -9,18 +9,23 @@ https://vtapi.netlify.app/
 - [x] Make homepage content appear on first pageload (shows footer & header w/no content)
 - [ ] Add meta-content for [link-preview](https://andrejgajdos.com/how-to-create-a-link-preview/)
 - [ ] Add some kind of favicon other than react logo
-- [ ] Hook form up to google forms
-- [X] Deploy to netlify (trying to fix cors)
-- [ ] Site shows white screen but # router in URL on mobile / android :( https://vtapi.netlify.app/
+- [X] Hook form up to google forms
+- [X] Deploy to netlify (http://www.vtapi.co)
+- [ ] SSL / HTTPS
+- [ ] Contact Form Validation
+- [ ] Contact Form Recaptcha
+- [ ] React Router Pageload GA call
 
 ### TODO STYLING
 - [X] Services - About 90% done, maybe some spacers?
 - [X] Home - 100% done
 - [X] Values - 95% Done, needs final review
-- [ ] Whats an API - Needs alignment / structure to existing content. Logos / links for examples
+- [X] Whats an API - Needs alignment / structure to existing content. Logos / links for examples
 - [X] About - Two styles look good
-- [ ] Contact - Radio groups are misaligned. Form has CORS issues despite deploys to netlify
+- [X] Contact - Radio groups are misaligned. Form has CORS issues despite deploys to netlify
 - [X] Header - Star spacers squish into nav items when resizing small
+
+
 
 ### Build Instructions
 

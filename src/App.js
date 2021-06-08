@@ -1,7 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'react-style-reset/string';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useTracking } from './useTracking';
 
 // Data
 import {menu} from './data';
